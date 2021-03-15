@@ -1,0 +1,28 @@
+Technology Used
+- Python Flask Microframework for the backend.
+- React for the frontend.
+- Postgres for the database.
+- Docker and docker-compose for the setup.
+
+Folder structure:
+- All backend code is in the folder named backend and all frontend code is the folder named frontend.
+
+Running the Application:
+
+A make file is provided at the root of the repository.
+- Run "make server" to start the application, this will also in turn run make setup
+- The API can be accessed at http://localhost:5000
+- The frontend can be accessed at http://localhost:3000
+- Run "make test" to run tests
+
+Assumptions and decisions taken:
+- Scope: I assumed that the scope did not include Auth and user management
+- If the URL already exists in our database, we do not need to generate a new shortlink for it instead we return the existing short link.
+- Shortlinks are not deleted or patched from the database
+- Slugs can be 1 to 7 characters long
+- Character set for the slug includes 1 - 9, a - z, A - Z
+- Only http and https url schemes are allowed
+- Setup shared will be run locally
+- I also assumed hosting was not part of the scope.
+
+I took a total of about 10 hours to complete the challenge, it had been a while without developing for the frontend.
