@@ -30,6 +30,10 @@ test:setup
 	@ ${INFO} "Running backend tests"
 	@ docker-compose -f $(DOCKER_DEV_COMPOSE_FILE) run --rm api nose2 -v --with-coverage --coverage app
 
+clean:
+	@ ${INFO} "Cleaning up ..."
+	@ docker-compose -f $(DOCKER_DEV_COMPOSE_FILE) down --rmi all
+
 # colors
 YELLOW := $(shell tput -Txterm setaf 3)
 NC := "\e[0m"
