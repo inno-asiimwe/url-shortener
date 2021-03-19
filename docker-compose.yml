@@ -29,8 +29,5 @@ services:
     container_name: stord-url-shortener-frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
 volumes:
   db-data:
-

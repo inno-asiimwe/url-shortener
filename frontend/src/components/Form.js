@@ -8,7 +8,6 @@ const Form = ({setUrls, setvisibility, visibility}) => {
   const urlInput = useRef(null);
   const shortUrl = useRef(null);
   const [shortenedUrl, setShortenedUrl] = useState(null);
-  // const [urls, setUrls] = useState([])
   const [error, setError] = useState(null);
 
   const makeShortendUrl = (event) => {
@@ -41,10 +40,8 @@ const Form = ({setUrls, setvisibility, visibility}) => {
       setUrls("")
       setUrls(response.data.data)
     }).catch(error => {
-      // setError(error.message)
-      console.log(error)
+      setError(error.response.data.message)
     })
-    // setUrls(urls)
   }
 
   const resetForm = () => {

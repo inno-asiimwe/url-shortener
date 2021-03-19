@@ -1,9 +1,17 @@
-FROM node:15.11.0-alpine
+FROM node
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+ENV PATH /app/node_modules/.bin:$PATH
 
-RUN npm install -g create-react-app && npm install
+COPY package.json ./
 
-CMD ["npm", "start"]
+RUN npm install yarn 
+
+RUN yarn add global create-react-app
+
+RUN yarn
+
+COPY . /app
+
+CMD ["yarn", "start"]
