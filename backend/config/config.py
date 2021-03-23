@@ -1,6 +1,6 @@
 import os, sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Base:
@@ -20,7 +20,7 @@ class Testing(Base):
     TESTING = True
     DEBUG = True
     # SQLALCHEMY_DATABASE_URI = "postgresql://postgres:postgres@test-database/test-database"
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.sqlite')
 
 
 class Staging(Base):
